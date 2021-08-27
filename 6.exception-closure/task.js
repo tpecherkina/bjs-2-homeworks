@@ -42,7 +42,15 @@ function parseCount(value) {
         function getTriangle(side1, side2, side3) {
          try {
              return new Triangle(side1, side2, side3);
-         } catch (error) {
-            return error;
          }
+            catch (error) {
+                return {
+                    getPerimeter() {
+                        return "Ошибка! Треугольник не существует";
+                    },
+                    getArea() {
+                        return "Ошибка! Треугольник не существует";
+                    }
+                }
+            }
         }
